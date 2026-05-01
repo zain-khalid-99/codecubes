@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #06080F;
+    --surface: #0B1220;
+    --foreground: #FFFFFF;
+    
+    --primary: #7B61FF;
+    --primary-hover: #9B8CFF;
+    --primary-active: #5B4DFF;
+    --primary-foreground: #FFFFFF;
+    
+    --secondary: #9CA3AF;
+    --secondary-foreground: #FFFFFF;
+    
+    --muted: #6B7280;
+    --muted-foreground: #FFFFFF;
+
+    --border: 255, 255, 255, 0.08;
+    --ring: #7B61FF;
+    
+    /* Font scale base setup could go here, but Tailwind handles it */
+  }
+
+  .light {
+    --background: #F3F4F6;
+    --surface: #FFFFFF;
+    --foreground: #111827;
+    
+    --primary: #7B61FF;
+    --primary-hover: #5B4DFF;
+    --primary-active: #4F46E5;
+    
+    --secondary: #4B5563;
+    --muted: #9CA3AF;
+
+    --border: 0, 0, 0, 0.08;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-satoshi tracking-[-0.01em];
+  }
+  
+  h1 { @apply text-[56px] font-[700] leading-[1.1]; }
+  h2 { @apply text-[40px] font-[600] leading-[1.2]; }
+  h3 { @apply text-[28px] font-[600] leading-[1.3]; }
+  h4 { @apply text-[22px] font-[500] leading-[1.4]; }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] backdrop-blur-[12px];
+  }
+  .light .glass {
+    @apply bg-[rgba(0,0,0,0.02)] border border-[rgba(0,0,0,0.08)] backdrop-blur-[12px];
+  }
+}
